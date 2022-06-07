@@ -231,7 +231,8 @@ export default function Home () {
                         sx={{ 
                             pl: matchUpMd ? 8 : 2, 
                             color: '#F4F2ED', 
-                            textDecoration: 'underline' 
+                            textDecoration: 'underline',
+                            fontSize: useMediaQuery('(min-width:280px)') ? 'inherit' : "24px !important"
                         }}
                     >Our Vision</Typography>
                 </Stack>

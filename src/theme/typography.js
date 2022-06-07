@@ -56,14 +56,14 @@ const typography = {
         fontWeight: 700,
         lineHeight: 1.2,
         fontSize: pxToRem(20),
-        ...responsiveFontSizes({ xs: 35, sm: 45, md: 52, lg: 60, xl: 70 }),
+        ...responsiveFontSizes({ xs: 30, sm: 45, md: 52, lg: 60, xl: 70 }),
     },
     h5: {
         fontWeight: 700,
         lineHeight: 1.5,
         fontSize: pxToRem(18),
         fontFamily: 'Apercu-Bold',
-        ...responsiveFontSizes({ xs: 80, sm: 90, md: 100, lg: 110, xl: 120 }),
+        ...responsiveFontSizes({ xs: 60, sm: 90, md: 100, lg: 110, xl: 120 }),
     },
     h6: {
         fontWeight: 700,
@@ -76,7 +76,7 @@ const typography = {
         lineHeight: 1.5,
         fontSize: pxToRem(16),
         fontFamily: 'Apercu-Light',
-        ...responsiveFontSizes({ xs: 16, sm: 22, md: 28, lg: 34, xl: 40 })
+        ...responsiveFontSizes({ xs: 12, sm: 22, md: 28, lg: 34, xl: 40 })
     },
     subtitle2: {
         fontWeight: 600,

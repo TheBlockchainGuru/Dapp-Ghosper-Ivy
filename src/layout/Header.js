@@ -8,6 +8,7 @@ import {
     MenuItem,
     Toolbar,
     Typography,
+    useMediaQuery
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -31,7 +32,10 @@ export default function Header () {
             <Container maxWidth="xl">
                 <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
                     <Link to="/" style={{ display: 'flex' }}>
-                        <Box component="img" src="/img/logo.png" sx={{ mr: 1, maxWidth: 192 }} />
+                        <Box component="img" src="/img/logo.png" 
+                            sx={{ 
+                                mr: 1, 
+                                maxWidth: useMediaQuery('(min-width:260px)') ? 192 : '100%' }} />
                     </Link>
                     <IconButton
                         size="large"

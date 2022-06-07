@@ -9,7 +9,7 @@ import { useTheme } from '@mui/material/styles';
 
 /* slide Image settings */
 const imageCount = [
-    { src: 1, name: '<Fares Abu-Taleb>', position: 'CEO' },
+    { src: 1, name: '<Fares Abu-Taleb>', position: 'CEO & Founder' },
     { src: 2, name: '<Mohammad Basem>', position: 'CTO' },
     { src: 3, name: '<Basim Al-Taher>', position: 'Art Director' },
     { src: 4, name: '<Andrii Lazariev>', position: 'Lead Game Developer' },
