@@ -39,9 +39,29 @@ export default function Contact () {
     const matchUpLg = useMediaQuery(theme.breakpoints.up('lg'));
     const matchUpXl = useMediaQuery(theme.breakpoints.up('xl'));
 
+    const [name, setName] = React.useState('');
+    const [email, setEmail] = React.useState('');
+    const [subject, setSubject] = React.useState('');
+    const [message, setMessage] = React.useState('');
+
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+    const handleClose = () => { 
+        setName('');
+        setEmail('');
+        setSubject('');
+        setMessage('');
+        setOpen(false) 
+    };
+    const handleName = (e) => setName(e.target.value);
+    const handleEmail = (e) => setEmail(e.target.value);
+    const handleSubject = (e) => setSubject(e.target.value);
+    const handleMessage = (e) => setMessage(e.target.value);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        handleOpen();
+    }
 
     return (
         <Box>
@@ -146,84 +166,100 @@ export default function Contact () {
                     <Stack flexDirection="row"
                         gap={matchUpMd ? 7 : 0}>
                         <Stack flex={5} sx={{ maxWidth: '100%' }}>
-                            <FormControl variant="standard" fullWidth>
-                                <Input
-                                    placeholder="LAST NAME"
+                            <Box component="form" onSubmit={handleSubmit}>
+                                <FormControl variant="standard" fullWidth>
+                                    <Input
+                                        placeholder="LAST NAME"
+                                        required={true}
+                                        value={name}
+                                        onChange={handleName}
+                                        sx={{
+                                            p: 1,
+                                            borderTop: '1px solid #8e8d8a',
+                                            '& input::placeholder': {
+                                                fontFamily: 'Apercu-Light'
+                                            }
+                                        }}
+                                    />
+                                </FormControl>
+                                <FormControl variant="standard" fullWidth>
+                                    <Input 
+                                        placeholder='E-MAIL'
+                                        type="email"
+                                        required={true}
+                                        value={email}
+                                        onChange={handleEmail}
+                                        sx={{
+                                            p: 1,
+                                            '& input::placeholder': {
+                                                fontFamily: 'Apercu-Light'
+                                            }
+                                        }}
+                                    />
+                                </FormControl>
+                                <FormControl variant="standard" fullWidth>
+                                    <Input
+                                        placeholder="SUBJECT"
+                                        required={true}
+                                        value={subject}
+                                        onChange={handleSubject}
+                                        sx={{
+                                            p: 1,
+                                            '& input::placeholder': {
+                                                fontFamily: 'Apercu-Light'
+                                            }
+                                        }}
+                                    />
+                                </FormControl>
+                                <FormControl variant="standard" fullWidth
                                     sx={{
-                                        p: 1,
-                                        borderTop: '1px solid #8e8d8a',
-                                        '& input::placeholder': {
-                                            fontFamily: 'Apercu-Light'
+                                        '& textarea': {
+                                            bgcolor: 'transparent',
+                                            p: 1,
+                                            border: 0,
+                                            borderBottomWidth: 1,
+                                            borderBottomColor: '#8e8d8a',
+                                            '&::placeholder': {
+                                                color: '#949390',
+                                                fontWeight: 400,
+                                                fontFamily: 'Apercu-Light'
+                                            },
+                                            '&:focus-visible': {
+                                                outline: 0
+                                            }
                                         }
-                                    }}
-                                />
-                            </FormControl>
-                            <FormControl variant="standard" fullWidth>
-                                <Input 
-                                    placeholder='E-MAIL'
-                                    sx={{
-                                        p: 1,
-                                        '& input::placeholder': {
-                                            fontFamily: 'Apercu-Light'
-                                        }
-                                    }}
-                                />
-                            </FormControl>
-                            <FormControl variant="standard" fullWidth>
-                                <Input
-                                    placeholder="SUBJECT"
-                                    sx={{
-                                        p: 1,
-                                        '& input::placeholder': {
-                                            fontFamily: 'Apercu-Light'
-                                        }
-                                    }}
-                                />
-                            </FormControl>
-                            <FormControl variant="standard" fullWidth
-                                sx={{
-                                    '& textarea': {
-                                        bgcolor: 'transparent',
-                                        p: 1,
-                                        border: 0,
-                                        borderBottomWidth: 1,
-                                        borderBottomColor: '#8e8d8a',
-                                        '&::placeholder': {
-                                            color: '#949390',
-                                            fontWeight: 400,
-                                            fontFamily: 'Apercu-Light'
-                                        },
-                                        '&:focus-visible': {
-                                            outline: 0
-                                        }
-                                    }
-                                }}
-                            >
-                                <TextareaAutosize
-                                    aria-label="empty textarea"
-                                    placeholder="YOUR MESSAGE"
-                                    minRows={5}
-                                    style={{
-                                        font: 'inherit',
-                                    }}
-                                />
-                            </FormControl>
-                            <Stack flexDirection="row" 
-                                justifyContent="flex-end" 
-                                sx={{ py : 3 }}
-                            >
-                                <Button 
-                                    size="large" 
-                                    variant="contained" 
-                                    fullWidth={matchUpMd ? false : true}
-                                    onClick={handleOpen}
-                                    sx={{
-                                        px: 4
                                     }}
                                 >
-                                    <Typography>&lt;Send&gt;</Typography>
-                                </Button>
-                            </Stack>
+                                    <TextareaAutosize
+                                        aria-label="empty textarea"
+                                        placeholder="YOUR MESSAGE"
+                                        minRows={5}
+                                        value={message}
+                                        onChange={handleMessage}
+                                        required={true}
+                                        style={{
+                                            font: 'inherit',
+                                        }}
+                                    />
+                                </FormControl>
+                                <Stack flexDirection="row" 
+                                    justifyContent="flex-end" 
+                                    sx={{ py : 3 }}
+                                >
+                                    <Button 
+                                        size="large" 
+                                        variant="contained" 
+                                        fullWidth={matchUpMd ? false : true}
+                                        type="submit"
+                                        // onClick={handleOpen}
+                                        sx={{
+                                            px: 4
+                                        }}
+                                    >
+                                        <Typography>&lt;Send&gt;</Typography>
+                                    </Button>
+                                </Stack>
+                            </Box>
                         </Stack>
                         <Stack flex={2} sx={{ display: matchUpMd ? 'flex' : 'none' }}></Stack>
                     </Stack>
