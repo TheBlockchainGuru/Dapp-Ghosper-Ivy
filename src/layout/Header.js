@@ -18,7 +18,7 @@ const pages = ['Home', 'Team', 'Contact'];
 
 export default function Header () { 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const matchUpSm = useMediaQuery('min-width: 300px')
+    const matchUpSm = useMediaQuery('(min-width: 300px)')
   
     const handleOpenNavMenu = (event) => {
       setAnchorElNav(event.currentTarget);
@@ -120,7 +120,7 @@ export default function Header () {
                                 <Typography 
                                     variant="h1" 
                                     sx={{ color: '#729BF5',
-                                        fontSize: matchUpSm ? 'inherit' : '60px !important'
+                                        fontSize: matchUpSm ? 'inherit' : '40px !important'
                                     }} 
                                     textAlign="center"
                                 >{page}</Typography>
@@ -129,7 +129,7 @@ export default function Header () {
                                     sx={{ 
                                         color: '#F4F2ED', 
                                         display: 'none',
-                                        fontSize: matchUpSm ? 'inherit' : '60px !important'
+                                        fontSize: matchUpSm ? 'inherit' : '40px !important'
                                     }} 
                                     textAlign="center"
                                 >&lt;{page}&gt;</Typography>
