@@ -206,8 +206,11 @@ export default function Home () {
                         component="video"
                         image="/img/video.webm"
                         autoPlay
-                        muted
+                        // muted
                         loop="infinite"
+                        controls={true} 
+                        playsinline
+                        type='video/mp4'
                         sx={{
                             // position:"absolute",
                             // top: 0,
