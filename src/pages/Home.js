@@ -18,11 +18,12 @@ import HoverVideoPlayer from 'react-hover-video-player';
 export default function Home () {
     const theme = useTheme();
     const matchUpMd = useMediaQuery(theme.breakpoints.up('md'));
-    const blink = keyframes`
-        from, to { border-color: transparent }
-        50% { border-color: orange; }
-    `
-    let destination = {};
+    const matchUp390 = useMediaQuery('(max-width: 390px)');
+    const matchUp411 = useMediaQuery('(max-width: 411px)');
+    const matchUp575 = useMediaQuery('(max-width: 575px)');
+    const matchUp608 = useMediaQuery('(max-width: 608px)');
+    const matchUp641 = useMediaQuery('(max-width: 641px)');
+    const matchUp991 = useMediaQuery('(max-width: 991px)');
 
     const arrow = keyframes`
         0%   {transform: translateY(-20px)}
@@ -35,62 +36,6 @@ export default function Home () {
         justify-content: center;
         animation: ${arrow} .5s infinite linear alternate;
     `
-
-    const typing = keyframes`
-        from { width: 0 }
-        to { width: 100% }
-    `
-    const HeaderText = styled.div`
-        overflow: hidden;
-
-        border-right: .15em solid orange;
-        animation: 
-            ${typing} 3.5s steps(40, end),
-            ${blink} .75s step-end infinite;
-    `
-    // set up text to print, each item in array is new line
-    var aText = new Array(
-        "We’re an &lt;uber-cool&gt;", 
-        "game development",
-        " studio."
-        // "Those who understand binary, and those who don't"
-    );
-    
-    // var iSpeed = 50; // time delay of print out
-    // var iIndex = 0; // start printing array at this posision
-    // var iArrLength = aText[0].length; // the length of the text array
-    // var iScrollAt = 20; // start scrolling up at this many lines
-    
-    // var iTextPos = 0; // initialise text position
-    // var sContents = ''; // initialise contents variable
-    // var iRow; // initialise current row
-
-    // function typewriter()
-    // {
-    //     sContents =  ' ';
-    //     iRow = Math.max(0, iIndex-iScrollAt);
-    //     var destination = document.getElementById("typedtext");
-        
-    //     while ( iRow < iIndex ) {
-    //         sContents += aText[iRow++] + '<br />';
-    //     }
-    //     destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
-    //     if ( iTextPos++ == iArrLength ) {
-    //         iTextPos = 0;
-    //         iIndex++;
-    //         if ( iIndex != aText.length ) {
-    //             iArrLength = aText[iIndex].length;
-    //             setTimeout(() => typewriter(), 500);
-    //         }
-    //     } else {
-    //         setTimeout(() => typewriter(), iSpeed);
-    //     }
-    // }
-
-    // React.useEffect(() => {
-    //     typewriter();
-    // }, [])
-
 
     return (
         <Box>
@@ -106,7 +51,25 @@ export default function Home () {
                     flexDirection="row"
                     alignItems="center"
                 >
-                    <Typography variant="h3" flex={2} id="typedtext1" sx={{ lineHeight: 1.2, fontFamily: 'Apercu-Medium' }}>
+                    <Typography variant="h3" 
+                        flex={2} id="typedtext1" 
+                        sx={{ 
+                            lineHeight: 1.2, 
+                            fontFamily: 'Apercu-Medium',
+                            height: matchUp390
+                                    ? 168
+                                    : matchUp411
+                                    ? 140 
+                                    : matchUp575
+                                    ? 101
+                                    : matchUp608
+                                    ? 272
+                                    : matchUp641
+                                    ? 218
+                                    : matchUp991
+                                    ? 163
+                                    : 'none'
+                        }}>
                         <Typewriter
                             onInit={(typewriter) => {
                                 typewriter.typeString('We’re an <span style="font-family:Apercu-Bold-Italic;">uber-cool</span> <br /><span style="text-decoration:underline">game development<br />studio.</span>')
@@ -152,6 +115,7 @@ export default function Home () {
                     >
                         <HoverVideoPlayer
                             videoSrc="/img/compass.webm"
+                            type='video/webm'
                             style={{
                                 cursor: 'pointer'
                             }}
@@ -208,9 +172,8 @@ export default function Home () {
                         autoPlay
                         // muted
                         loop="infinite"
-                        controls={true} 
                         playsinline
-                        type='video/mp4'
+                        type='video/webm'
                         sx={{
                             // position:"absolute",
                             // top: 0,
@@ -448,6 +411,7 @@ export default function Home () {
                                         component="video"
                                         image="/img/ghost.webm"
                                         autoPlay
+                                        type='video/webm'
                                         muted
                                         loop="infinite"
                                         sx={{
