@@ -131,6 +131,7 @@ export default function Home () {
                             component="video"
                             image="/img/compass.webm"
                             autoPlay
+                            type="video/mp4"
                             muted
                             playsInline
                             ref={compassRef}
