@@ -167,47 +167,28 @@ export default function Home () {
                         }
                     }}
                 >
-                    {/* <Box 
-                        component="img" 
-                        src="/img/video.png" 
-                        sx={{ width: '100%' }} 
-                    /> */}
-                    {/* <video
-                        src="/img/video.webm"
-                        autoplay
-                        loop
-                        muted
-                        type='video/webm'
-                        playsinline
-                        style={{
-                            objectFit: 'fill',
-                            width: '100%'
-                        }}
-                    >
-                    </video> */}
-                    {/* <CardMedia 
-                        component="video"
-                        image="/img/video.webm"
-                        autoPlay
-                        muted
-                        playsInline
-                        type="video/webm"
-                        loop="infinite"
-                        sx={{
-                            // position:"absolute",
-                            // top: 0,
-                            objectFit: 'fill',
-                            width: '100%',
-                        }}
-                    /> */}
-                    <ReactPlayer
+                    <div dangerouslySetInnerHTML={{
+                        __html: `
+                        <video 
+                            loop
+                            muted
+                            autoPlay
+                            playsInline
+                            style="width: 100%;height: 100%;object-fit: fill;"
+                        >
+                            <source src="/img/video.webm" type="video/webm"></source>
+                        </video>
+                        `
+                    }}></div>
+                    
+                    {/* <ReactPlayer
                         loop
                         playing
                         muted={true}
                         url="/img/video.webm"
                         width="100%"
                         height="100%"
-                    />
+                    /> */}
                 </Stack>
                 <Stack 
                     flex={1} 
