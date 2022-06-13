@@ -118,7 +118,8 @@ export default function Home () {
                             type='video/webm'
                             typeof="video/webm"
                             itemType="video/webm"
-                            playsinline
+                            controls={true}
+                            playsInline
                             style={{
                                 cursor: 'pointer'
                             }}
@@ -187,6 +188,7 @@ export default function Home () {
                         autoPlay
                         muted
                         playsInline
+                        controls={true}
                         type="video/webm"
                         loop="infinite"
                         sx={{
@@ -429,6 +431,7 @@ export default function Home () {
                                         type='video/webm'
                                         muted
                                         playsInline
+                                        controls={true}
                                         loop="infinite"
                                         sx={{
                                             // position:"absolute",
