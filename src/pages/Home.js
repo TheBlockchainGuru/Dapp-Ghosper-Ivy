@@ -117,7 +117,6 @@ export default function Home () {
                             videoSrc="/img/compass.webm"
                             type='video/webm'
                             playsinline
-                            controls={true}
                             style={{
                                 cursor: 'pointer'
                             }}
@@ -175,7 +174,6 @@ export default function Home () {
                         muted
                         loop="infinite"
                         playsinline
-                        controls={true}
                         type='video/webm'
                         sx={{
                             // position:"absolute",
@@ -417,7 +415,6 @@ export default function Home () {
                                         type='video/webm'
                                         muted
                                         playsinline
-                                        controls={true}
                                         loop="infinite"
                                         sx={{
                                             // position:"absolute",
