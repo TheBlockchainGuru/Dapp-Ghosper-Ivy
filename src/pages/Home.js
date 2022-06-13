@@ -167,20 +167,19 @@ export default function Home () {
                         }
                     }}
                 >
-                    {/* <Box src="/img/video.gif" component="img" sx={{ width: '100%', height: '100%' }}/> */}
-                    <div dangerouslySetInnerHTML={{
-                        __html: `
-                        <video 
-                            loop
-                            muted
-                            autoPlay
-                            playsInline
-                            style="width: 100%;height: 100%;object-fit: fill;"
-                        >
-                            <source src="/img/video.mp4" type="video/mp4"></source>
-                        </video>
-                        `
-                    }}></div>
+                    <CardMedia 
+                        component="video"
+                        image="/img/video.mp4"
+                        autoPlay
+                        type='video/mp4'
+                        muted
+                        playsInline
+                        loop="infinite"
+                        sx={{
+                            objectFit: 'fill',
+                            width: '100%'
+                        }}
+                    />
                     
                     {/* <ReactPlayer
                         loop
