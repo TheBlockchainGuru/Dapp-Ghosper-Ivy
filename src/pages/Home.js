@@ -129,7 +129,7 @@ export default function Home () {
                         /> */}
                         <CardMedia 
                             component="video"
-                            image="/img/compass.webm"
+                            image="/img/compass.mp4"
                             autoPlay
                             type="video/mp4"
                             muted
