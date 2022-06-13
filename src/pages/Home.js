@@ -116,6 +116,7 @@ export default function Home () {
                         <HoverVideoPlayer
                             videoSrc="/img/compass.webm"
                             type='video/webm'
+                            playsinline
                             style={{
                                 cursor: 'pointer'
                             }}
@@ -170,7 +171,7 @@ export default function Home () {
                         component="video"
                         image="/img/video.webm"
                         autoPlay
-                        // muted
+                        muted
                         loop="infinite"
                         playsinline
                         type='video/webm'
@@ -413,6 +414,7 @@ export default function Home () {
                                         autoPlay
                                         type='video/webm'
                                         muted
+                                        playsinline
                                         loop="infinite"
                                         sx={{
                                             // position:"absolute",
