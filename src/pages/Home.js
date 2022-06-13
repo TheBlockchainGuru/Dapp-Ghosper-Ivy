@@ -116,10 +116,8 @@ export default function Home () {
                     >
                         <HoverVideoPlayer
                             videoSrc={ [{src: "/img/compass.mp4", type: 'video/mp4'}] }
-                            type='video/mp4'
-                            typeof="video/mp4"
-                            itemType="video/mp4"
                             playsInline
+                            preload='auto'
                             style={{
                                 cursor: 'pointer'
                             }}
@@ -161,6 +159,7 @@ export default function Home () {
                 <Stack
                     flexDirection="row"
                     sx={{
+                        mb: matchUpMd ? 0 : '-1px',
                         gridColumn: matchUpMd ? '3 / span 3' : '1 / span 3',
                         '& video': {
                             objectFit: 'fill'
