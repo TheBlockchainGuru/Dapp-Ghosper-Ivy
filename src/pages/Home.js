@@ -115,10 +115,10 @@ export default function Home () {
                         }}
                     >
                         <HoverVideoPlayer
-                            videoSrc={ [{src: "/img/compass.webm", type: 'video/webm'}] }
-                            type='video/webm'
-                            typeof="video/webm"
-                            itemType="video/webm"
+                            videoSrc={ [{src: "/img/compass.mp4", type: 'video/mp4'}] }
+                            type='video/mp4'
+                            typeof="video/mp4"
+                            itemType="video/mp4"
                             playsInline
                             style={{
                                 cursor: 'pointer'
@@ -167,6 +167,7 @@ export default function Home () {
                         }
                     }}
                 >
+                    {/* <Box src="/img/video.gif" component="img" sx={{ width: '100%', height: '100%' }}/> */}
                     <div dangerouslySetInnerHTML={{
                         __html: `
                         <video 
@@ -176,7 +177,7 @@ export default function Home () {
                             playsInline
                             style="width: 100%;height: 100%;object-fit: fill;"
                         >
-                            <source src="/img/video.webm" type="video/webm"></source>
+                            <source src="/img/video.mp4" type="video/mp4"></source>
                         </video>
                         `
                     }}></div>
@@ -417,9 +418,9 @@ export default function Home () {
                                 <Stack sx={{ height: '100%', bgcolor: '#010001', px: 0 }} justifyContent="center">
                                     <CardMedia 
                                         component="video"
-                                        image="/img/ghost.webm"
+                                        image="/img/ghost.mp4"
                                         autoPlay
-                                        type='video/webm'
+                                        type='video/mp4'
                                         muted
                                         playsInline
                                         loop="infinite"
@@ -429,7 +430,15 @@ export default function Home () {
                                             // width: '100%',
                                             maxWidth:  matchUpMd ? 312 : '100%',
                                         }}
-                                    />                                
+                                    />
+                                    {/* <Box 
+                                        component="img"
+                                        src="/img/ghost.gif"
+                                        sx={{
+                                            // height: '100%'
+                                            maxWidth:  matchUpMd ? 312 : '100%',
+                                        }}
+                                    /> */}
                                 </Stack>
                             </Stack>
                         </Box>
