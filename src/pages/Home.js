@@ -11,6 +11,7 @@ import {
 import Typewriter from 'typewriter-effect';
 import styled, { keyframes } from 'styled-components';
 import { Fade } from 'react-reveal';
+import ReactPlayer from 'react-player';
 import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
 import HoverVideoPlayer from 'react-hover-video-player';
@@ -118,7 +119,6 @@ export default function Home () {
                             type='video/webm'
                             typeof="video/webm"
                             itemType="video/webm"
-                            controls={true}
                             playsInline
                             style={{
                                 cursor: 'pointer'
@@ -162,6 +162,9 @@ export default function Home () {
                     flexDirection="row"
                     sx={{
                         gridColumn: matchUpMd ? '3 / span 3' : '1 / span 3',
+                        '& video': {
+                            objectFit: 'fill'
+                        }
                     }}
                 >
                     {/* <Box 
@@ -182,13 +185,12 @@ export default function Home () {
                         }}
                     >
                     </video> */}
-                    <CardMedia 
+                    {/* <CardMedia 
                         component="video"
                         image="/img/video.webm"
                         autoPlay
                         muted
                         playsInline
-                        controls={true}
                         type="video/webm"
                         loop="infinite"
                         sx={{
@@ -197,6 +199,14 @@ export default function Home () {
                             objectFit: 'fill',
                             width: '100%',
                         }}
+                    /> */}
+                    <ReactPlayer
+                        loop
+                        playing
+                        muted={true}
+                        url="/img/video.webm"
+                        width="100%"
+                        height="100%"
                     />
                 </Stack>
                 <Stack 
@@ -431,7 +441,6 @@ export default function Home () {
                                         type='video/webm'
                                         muted
                                         playsInline
-                                        controls={true}
                                         loop="infinite"
                                         sx={{
                                             // position:"absolute",
