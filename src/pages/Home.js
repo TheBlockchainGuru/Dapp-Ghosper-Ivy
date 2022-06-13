@@ -166,22 +166,32 @@ export default function Home () {
                         src="/img/video.png" 
                         sx={{ width: '100%' }} 
                     /> */}
-                    
-                    <CardMedia 
+                    <video
+                        src="/img/video.webm"
+                        autoplay
+                        loop
+                        muted
+                        type='video/webm'
+                        playsinline
+                        style={{
+                            objectFit: 'fill',
+                            width: '100%'
+                        }}
+                    >
+                    </video>
+                    {/* <CardMedia 
                         component="video"
                         image="/img/video.webm"
                         autoPlay
                         muted
                         loop="infinite"
-                        playsinline
-                        type='video/webm'
                         sx={{
                             // position:"absolute",
                             // top: 0,
                             objectFit: 'fill',
                             width: '100%',
                         }}
-                    />
+                    /> */}
                 </Stack>
                 <Stack 
                     flex={1} 
