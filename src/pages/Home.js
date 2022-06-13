@@ -25,6 +25,8 @@ export default function Home () {
     const matchUp608 = useMediaQuery('(max-width: 608px)');
     const matchUp641 = useMediaQuery('(max-width: 641px)');
     const matchUp991 = useMediaQuery('(max-width: 991px)');
+    const compassRef = React.useRef(null);
+
 
     const arrow = keyframes`
         0%   {transform: translateY(-20px)}
@@ -38,6 +40,9 @@ export default function Home () {
         animation: ${arrow} .5s infinite linear alternate;
     `
 
+    React.useEffect(() => {
+        compassRef.current.pause()
+    },[])
     return (
         <Box>
             <Stack 
@@ -114,26 +119,31 @@ export default function Home () {
                             width: '65%'
                         }}
                     >
-                        <HoverVideoPlayer
+                        {/* <HoverVideoPlayer
                             videoSrc={ [{src: "/img/compass.mp4", type: 'video/mp4'}] }
                             playsInline
                             preload='auto'
                             style={{
                                 cursor: 'pointer'
                             }}
-                        />
-                        {/* <CardMedia 
+                        /> */}
+                        <CardMedia 
                             component="video"
-                            image="/img/news.webm"
+                            image="/img/compass.webm"
                             autoPlay
                             muted
+                            playsInline
+                            ref={compassRef}
+                            onMouseMove={() => compassRef.current.play()}
+                            onMouseOut={() => compassRef.current.pause()}
                             loop="infinite"
                             sx={{
                                 // position:"absolute",
                                 // top: 0,
+                                cursor: 'pointer',
                                 width: '100%',
                             }}
-                        /> */}
+                        />
                     </Box>
                 </Stack>
                 <Stack 
