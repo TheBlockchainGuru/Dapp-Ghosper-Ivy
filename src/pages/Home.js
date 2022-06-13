@@ -114,8 +114,10 @@ export default function Home () {
                         }}
                     >
                         <HoverVideoPlayer
-                            videoSrc="/img/compass.webm"
+                            videoSrc={ [{src: "/img/compass.webm", type: 'video/webm'}] }
                             type='video/webm'
+                            typeof="video/webm"
+                            itemType="video/webm"
                             playsinline
                             style={{
                                 cursor: 'pointer'
@@ -166,7 +168,7 @@ export default function Home () {
                         src="/img/video.png" 
                         sx={{ width: '100%' }} 
                     /> */}
-                    <video
+                    {/* <video
                         src="/img/video.webm"
                         autoplay
                         loop
@@ -178,12 +180,14 @@ export default function Home () {
                             width: '100%'
                         }}
                     >
-                    </video>
-                    {/* <CardMedia 
+                    </video> */}
+                    <CardMedia 
                         component="video"
                         image="/img/video.webm"
                         autoPlay
                         muted
+                        playsInline
+                        type="video/webm"
                         loop="infinite"
                         sx={{
                             // position:"absolute",
@@ -191,7 +195,7 @@ export default function Home () {
                             objectFit: 'fill',
                             width: '100%',
                         }}
-                    /> */}
+                    />
                 </Stack>
                 <Stack 
                     flex={1} 
@@ -424,7 +428,7 @@ export default function Home () {
                                         autoPlay
                                         type='video/webm'
                                         muted
-                                        playsinline
+                                        playsInline
                                         loop="infinite"
                                         sx={{
                                             // position:"absolute",
